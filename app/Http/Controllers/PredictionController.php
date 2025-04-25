@@ -6,6 +6,7 @@ use App\Models\Prediction;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Inertia\Inertia;
 
 class PredictionController extends Controller
 {
@@ -14,7 +15,21 @@ class PredictionController extends Controller
         $predictions = Prediction::with('user')
             ->orderBy('prediction')
             ->get();
-        return view('predictions.index', compact('predictions'));
+
+        return Inertia::render('Predictions/Index', [
+            'predictions' => $predictions,
+        ]);
+    }
+
+    public function customerIndex()
+    {
+        $predictions = Prediction::with('user')
+            ->orderBy('prediction')
+            ->get();
+
+        return view('predictions.index', [
+            'predictions' => $predictions,
+        ]);
     }
 
     public function create()
@@ -51,5 +66,14 @@ class PredictionController extends Controller
     public function thankyou()
     {
         return view('predictions.thankyou');
+    }
+
+    public function update(Request $request, Prediction $prediction)
+    {
+        $prediction->update([
+            'is_payed' => !$prediction->is_payed
+        ]);
+
+        return response()->json($prediction->fresh()->load('user'));
     }
 }

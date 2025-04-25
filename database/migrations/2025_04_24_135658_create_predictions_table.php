@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->integer('prediction');
             $table->integer('user_id');
+            $table->boolean('is_payed')->default(false);
 
             $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();

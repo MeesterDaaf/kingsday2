@@ -6,7 +6,7 @@
                     Maak je Koningsdag voorspelling
                 </h2>
                 <p class="mt-4 text-center text-lg text-gray-600">
-                    Vul je gegevens in en voorspel het winnende getal
+                    Betaal €0,50 voor een voorspelling
                 </p>
             </div>
             <form class="mt-8 space-y-6" action="{{ route('predictions.store') }}" method="POST">
@@ -38,7 +38,17 @@
                         Voorspelling indienen
                     </button>
                 </div>
-            </form>
+                <div class="mt-22 ">
+                    <img src="{{ asset('storage/NCFS.jpg') }}" alt="NCFS Logo" class="mx-auto h-12 w-auto mb-4">
+                    <p class="text-center text-gray-600 mb-4 italic">
+                        De helft van de opbrengst gaat naar het Nederlandse Cystic Fibrosis Stichting (NCFS).
+                        <a href="{{ route('predictions.customer') }}"
+                            class="group relative w-full flex justify-center py-3 px-4 border border-transparent text-lg font-medium rounded-md text-white bg-orange-400 hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500">
+                            Bekijk alle voorspellingen
+                        </a>
+                </div>
         </div>
+        </form>
+    </div>
     </div>
 </x-base-layout>
