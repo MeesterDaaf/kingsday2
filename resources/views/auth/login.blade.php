@@ -32,6 +32,12 @@
             </label>
         </div>
 
+        <div class="flex items-center justify-end mt-4">
 
+
+            <x-primary-button class="ms-3">
+                {{ __('Log in') }}
+            </x-primary-button>
+        </div>
     </form>
 </x-guest-layout>
