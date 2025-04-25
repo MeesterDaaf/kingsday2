@@ -15,10 +15,17 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
-        User::factory()->create([
-            'name' => 'David',
-            'email' => 'david@dedaaf.com',
+        // User::factory()->create([
+        //     'name' => 'David',
+        //     'email' => 'david@dedaaf.com',
+        //     'password' => bcrypt('novacollege99'),
+        // ]);
+
+        User::create([
+            'name' => 'Admin',
+            'email' => 'admin@dedaaf.com',
             'password' => bcrypt('novacollege99'),
+
         ]);
     }
 }
