@@ -16,7 +16,7 @@ class PredictionController extends Controller
             ->orderBy('prediction')
             ->get();
 
-        return Inertia::render('Predictions/Index', [
+        return view('predictions.admin', [
             'predictions' => $predictions,
         ]);
     }
@@ -87,6 +87,6 @@ class PredictionController extends Controller
             'is_payed' => !$prediction->is_payed
         ]);
 
-        return response()->json($prediction->fresh()->load('user'));
+        return redirect()->back()->with('success', 'Betaalstatus bijgewerkt');
     }
 }
