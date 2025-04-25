@@ -20,9 +20,9 @@
                     <img src="{{ asset('storage/NCFS.jpg') }}" alt="NCFS Logo" class="mx-auto h-12 w-auto mb-4">
                     <p class="text-center text-gray-600 mb-4 italic">
                         De helft van de opbrengst gaat naar het Nederlandse Cystic Fibrosis Stichting (NCFS).
-                        <a href="{{ route('home') }}"
+                        <a href="{{ route('predictions.index') }}"
                             class="group relative w-full flex justify-center py-3 px-4 border border-transparent text-lg font-medium rounded-md text-white bg-orange-600 hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500">
-                            Nog een voorspelling doen
+                            Bekijk alle voorspellingen
                         </a>
                 </div>
             </div>
