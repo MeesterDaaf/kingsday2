@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PredictionController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -13,5 +14,14 @@ Route::middleware(['auth', 'verified'])->group(function () {
     })->name('dashboard');
 });
 
-require __DIR__.'/settings.php';
-require __DIR__.'/auth.php';
+require __DIR__ . '/settings.php';
+require __DIR__ . '/auth.php';
+
+Route::get('/', [PredictionController::class, 'create'])->name('home');
+
+
+Route::get('/predictions', [PredictionController::class, 'index'])->name('predictions.index');
+
+Route::post('/predictions', [PredictionController::class, 'store'])->name('predictions.store');
+
+Route::get('/predictions/thankyou', [PredictionController::class, 'thankyou'])->name('predictions.thankyou');
