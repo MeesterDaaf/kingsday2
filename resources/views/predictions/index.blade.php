@@ -6,6 +6,45 @@
                     Alle Koningsdag Voorspellingen
                 </h2>
 
+                <div class="bg-orange-50 rounded-lg p-6 mb-8">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="text-center">
+                            <h3 class="text-lg font-semibold text-gray-700">Aantal voorspellingen</h3>
+                            <p class="text-3xl font-bold text-orange-600">{{ $totalPredictions }}</p>
+                        </div>
+                        <div class="text-center">
+                            <h3 class="text-lg font-semibold text-gray-700">Totaal opgehaald</h3>
+                            <p class="text-3xl font-bold text-orange-600">
+                                €{{ number_format($totalAmount, 2, ',', '.') }}</p>
+                        </div>
+                        <div class="text-center">
+                            <h3 class="text-lg font-semibold text-gray-700">Naar goed doel</h3>
+                            <p class="text-3xl font-bold text-orange-600">
+                                €{{ number_format($charityAmount, 2, ',', '.') }}</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-orange-50 rounded-lg p-6 mb-8">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="text-center">
+                            <h3 class="text-lg font-semibold text-gray-700">Gemiddelde voorspelling</h3>
+                            <p class="text-3xl font-bold text-orange-600">
+                                {{ number_format($averagePrediction, 0, ',', '.') }} gram</p>
+                        </div>
+                        <div class="text-center">
+                            <h3 class="text-lg font-semibold text-gray-700">Laagste voorspelling</h3>
+                            <p class="text-3xl font-bold text-orange-600">
+                                {{ number_format($lowestPrediction, 0, ',', '.') }} gram</p>
+                        </div>
+                        <div class="text-center">
+                            <h3 class="text-lg font-semibold text-gray-700">Hoogste voorspelling</h3>
+                            <p class="text-3xl font-bold text-orange-600">
+                                {{ number_format($highestPrediction, 0, ',', '.') }} gram</p>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="overflow-x-auto">
                     <table class="min-w-full divide-y divide-gray-200">
                         <thead class="bg-gray-50">

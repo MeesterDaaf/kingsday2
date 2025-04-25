@@ -27,8 +27,21 @@ class PredictionController extends Controller
             ->orderBy('prediction')
             ->get();
 
+        $totalPredictions = $predictions->count();
+        $totalAmount = $totalPredictions * 0.5;
+        $charityAmount = $totalAmount / 2;
+        $averagePrediction = $predictions->avg('prediction');
+        $lowestPrediction = $predictions->min('prediction');
+        $highestPrediction = $predictions->max('prediction');
+
         return view('predictions.index', [
             'predictions' => $predictions,
+            'totalPredictions' => $totalPredictions,
+            'totalAmount' => $totalAmount,
+            'charityAmount' => $charityAmount,
+            'averagePrediction' => $averagePrediction,
+            'lowestPrediction' => $lowestPrediction,
+            'highestPrediction' => $highestPrediction,
         ]);
     }
 
