@@ -19,6 +19,10 @@
                     <p class="mt-4 text-center text-lg text-gray-600">
                         Betaal €0,50 voor een voorspelling
                     </p>
+                    <p class="mt-4 text-center text-lg text-gray-600">
+                        Hoe zwaar is de pot met oranje linzen?
+                    </p>
+                    <p class="mt-4 text-center text-lg text-gray-600">
                 </div>
                 <form class="mt-8 space-y-6" action="{{ route('predictions.store') }}" method="POST">
                     @csrf
